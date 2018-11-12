@@ -135,15 +135,12 @@ def parse_midi(file_name):
                 # If given chord does not match anything in table of PyChoRe,
                 # just show the notes
                 if chord_name == None:
-                    # chord_name = f"No Match({' '.join([num_to_symbol(n) for n in chord_notes])})"
                     chord_name = ChordName.ChordName('', '', '', chord_notes)
                     pass
                 # First loop    
                 if cursor not in chords.keys():
                     chords[cursor] = chord_name
                 # Second loop and after
-                # if cursor in chords.keys() and str(chords[cursor])[:8] == 'No Match':
-                #     chords[cursor] = chord_name
                 if cursor in chords.keys() and chords[cursor].RootName == '':
                     chords[cursor] = chord_name
             if len(trimmed_chord_notes) == 0:
