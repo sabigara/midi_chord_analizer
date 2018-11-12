@@ -47,13 +47,13 @@ def expand_tracks(midi_file):
     return [t.name for t in midi_file.tracks]
 
 
-def analize_midi(file_name):
+def analize_midi(file_name, resolution_input='4', chord_tone_num_input='4'):
     # User inputs the desired length for chord determination
     # 1 represents a quoter note; 4 is a bar
-    resolution = 96 * int(4)
+    resolution = 96 * int(resolution_input)
  
     # User inputs the number of notes to be analized as element of a chord
-    chord_tone_num = int(4)
+    chord_tone_num = int(chord_tone_num_input)
 
     f = mido.MidiFile(file_name)
 
@@ -162,4 +162,4 @@ def analize_midi(file_name):
     print( [list(map((lambda n: n[0:-2] if n[-2:] == '[]' else n),  row)) for row in chord_sheet])
     
 if __name__ == '__main__':
-    analize_midi(sys.argv[1])
+    analize_midi(sys.argv[1], sys.argv[2], sys.argv[3])

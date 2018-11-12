@@ -33,7 +33,8 @@ def main():
     for message in new_track:
         print(message)
 
-    print(new_track[2].note)
+    if new_track[0].is_meta:
+        print(new_track[0])
 
 
 
