@@ -47,7 +47,7 @@ def expand_tracks(midi_file):
     return [t.name for t in midi_file.tracks]
 
 
-def parse_midi(file_name):
+def analize_midi(file_name):
     # User inputs the desired length for chord determination
     # 1 represents a quoter note; 4 is a bar
     resolution = 96 * int(4)
@@ -162,4 +162,4 @@ def parse_midi(file_name):
     print( [list(map((lambda n: n[0:-2] if n[-2:] == '[]' else n),  row)) for row in chord_sheet])
     
 if __name__ == '__main__':
-    parse_midi(sys.argv[1])
+    analize_midi(sys.argv[1])

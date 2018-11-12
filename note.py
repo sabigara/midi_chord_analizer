@@ -18,8 +18,8 @@ class Note:
         if self.start >= measure_start and self.start <= measure_end and self.end >= measure_end:
             return (measure_end - self.start) / (measure_end - measure_start)
 
-        if self.start >= measure_start and self.start <= measure_end \
-        and self.end >= measure_start and self.end <= measure_end:
+        if self.start >= measure_start and self.start <= measure_end and \
+                self.end >= measure_start and self.end <= measure_end:
             return (self.end - self.start) / (measure_end - measure_start)
 
     def num_to_symbol(self):
