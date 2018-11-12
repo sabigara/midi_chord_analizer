@@ -1,0 +1,6 @@
+blessings==1.7
+inquirer==2.5.1
+mido==1.2.9
+numpy==1.15.4
+readchar==2.0.1
+six==1.11.0

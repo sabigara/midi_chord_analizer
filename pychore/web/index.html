@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>PyChoReLib</title>
+</head>
+<body>
+<table style="width: 100%; text-align: left;" border="0" cellpadding="2"
+ cellspacing="2">
+  <tbody>
+    <tr align="center">
+      <td style="vertical-align: top;">
+      <h1 style="background-color: rgb(204, 204, 255);">PyChoReLib</h1>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">
+      <h2 style="background-color: rgb(153, 153, 255);">Why this
+project?</h2>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 255, 204);">
+      <ul>
+        <li>This projection was born out of <span
+ style="font-weight: bold;">enthusiasm</span></li>
+        <ul>
+          <li>Enthusiasm about music and different ways to describe it
+using one of many music theories.<br>
+          </li>
+          <li>Enthusiasm about the <a href="http://www.python.org">Python</a>
+programming language.<br>
+            <br>
+          </li>
+        </ul>
+        <li>This project was born out of <span
+ style="font-weight: bold;">frustration</span><br
+ style="font-weight: bold;">
+        </li>
+        <ul>
+          <li>Existing open source auto-accompaniment systems typically
+specify chords using chord names <br>
+despite lists of note names feeling more natural to me. <br>
+          </li>
+          <li>Not many people have open sourced their code to recognize
+chords --- or if they have, they hid it well.<br>
+Many projects, on the other hand, have some plans to add chord
+recognition capabilities to their system in the "future".<br>
+          </li>
+        </ul>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">
+      <h2 style="background-color: rgb(153, 153, 255);">Purpose</h2>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 255, 204);">
+      <ul>
+        <li>The library provides in a number of classes which offer the
+following functionality:<br>
+        </li>
+        <ul>
+          <li>transformation of a list of note names to a chord name:<br>
+e.g. ['a', 'c#', 'e', 'g'] =&gt; A7<br>
+Inversions
+are indicated using a slash and the root note.<br>
+e.g. ['e', 'g', 'a', 'c#'] =&gt; A7 / E<br>
+Chord recognition (for pragmatic reasons) ignores the difference
+between e.g. 'f#' and 'gb'.<br>
+            <br>
+          </li>
+          <li>Alternatively one can also recognize intervals.
+Recognition here does take <br>
+into account the difference between e.g. 'f#' and 'gb'.<br>
+e.g. ['c','f#'] =&gt; 'augmented fourth' or ['c', 'gb'] =&gt;
+'diminished fifth'<br>
+            <br>
+          </li>
+          <li>Intervals and chords can be transposed:<br>
+e.g. ['c','e'] transposed to 'f#' =&gt; ['f#','a#']<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ['c','e'] transposed to 'gb'
+=&gt; ['gb','bb']<br>
+            <br>
+          </li>
+        </ul>
+        <li>For now, internally the library works with note names 'a',
+'b', 'c', 'd', 'e', 'f', 'g' <br>
+and modifiers '#' (sharp), 'b' (moll), 'x' (double sharp), 'bb' (double
+moll)<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">
+      <h2 style="background-color: rgb(153, 153, 255);">Current features</h2>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 255, 204);">PyChoReLib
+in its current form is very much in Alpha-state.
+Nevertheless:<br>
+      <ul>
+        <li>PyChoReLib can already recognize and name hundreds of
+chords.</li>
+        <li><span style="text-decoration: underline;">New chords</span>
+can be <span style="text-decoration: underline;">taught</span> to the
+system "<span style="text-decoration: underline;">by example</span>".<br>
+e.g. teach the system that ['c','e','g'] is called 'C', and using its
+built-in music theory<br>
+knowledge it immediately knows how to recognize and label all major <br>
+chords in all inversions or (more generally) permutations.<br>
+        </li>
+        <li>Once chord recognition definitions have been taught to the
+system,<br>
+they can be <span style="text-decoration: underline;">saved to file</span>,
+allowing for quick initialization of the
+recognizer.</li>
+        <li>Intervals and chords can be <span
+ style="text-decoration: underline;">transposed</span>. <br>
+        </li>
+        <li>PyChoReLib comes with two <span
+ style="text-decoration: underline;">demo</span> programs:</li>
+        <ul>
+          <li><span style="font-weight: bold;">test.py:</span> tests
+the functionality offered by the library using Python's unit testing
+framework</li>
+          <li><span style="font-weight: bold;">midiinputdemo.py:</span>
+            <span style="text-decoration: underline;">real-time</span>
+converts <span style="text-decoration: underline;">midi input from
+midi devices</span> (ALSA for linux, MME for win32) to chord names<br>
+            <span style="font-style: italic;">NOTE: This latter program
+needs the </span><a style="font-style: italic;"
+ href="http://alumni.media.mit.edu/%7Eharrison/pyportmidi.html">PyPortMidi</a><span
+ style="font-style: italic;"> software package to be installed and
+running. (For now available in CVS only!)<br>
+            </span></li>
+        </ul>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; background-color: rgb(153, 153, 255);">
+      <h2>Planned features</h2>
+      </td>
+    </tr>
+    <tr>
+      <td
+ style="vertical-align: top; background-color: rgb(255, 255, 204);">
+      <ul>
+        <li>Extending the chord recognition database with new chord
+patterns.</li>
+        <li>Build in more music theory knowledge to automatically
+recognize more chords, while
+requiring less teaching. <br>
+(Based on matching notes to scales?)</li>
+        <li>Add functionality to suggest a scale which can be used to
+improvise over a chord</li>
+        <li>Extensions to the midiinput proof of concept:</li>
+        <ul>
+          <li>a teach mode in which the system can be taught new chords
+interactively<br>
+          </li>
+          <li>a GUI</li>
+          <li>proof of concept auto-arranger capabilities<br>
+          </li>
+        </ul>
+        <li>Add support for alternative note names<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr align="center">
+      <td style="vertical-align: top;"><small><small>(As you may have
+guessed, I suck at web design, which explains why this pages loads so
+fast and displays properly in most browsers.)</small></small><br>
+      <span style="text-decoration: underline; font-weight: bold;"></span><span
+ style="font-weight: bold;">Please use the <a
+ href="http://sourceforge.net/projects/chordrecognizer">sourceforge
+infrastructure</a> for communication about this project. <br>
+There be <a
+ href="http://sourceforge.net/project/screenshots.php?group_id=155182">screenshots</a>!</span><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<br>
+</body>
+</html>

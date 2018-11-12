@@ -1,0 +1,34 @@
+2005-dec-25  Stefaan Himpe  stefaan.himpe@gmail.com
+	* Bugfix interval transposition
+	* Update unit tests
+
+2005-dec-23  Stefaan Himpe  stefaan.himpe@gmail.com
+	* Add interval transposition
+
+2005-dec-23  Stefaan Himpe  stefaan.himpe@gmail.com
+	* Add interval recognizer and interval name classes
+
+2005-dec-22  Stefaan Himpe  stefaan.himpe@gmail.com
+	* Unit Testing:  replaced demo program with unit tests (need to add
+	more tests)
+	* ChordName: changed ChordName to always have a Slash attribute.
+	When initialized to the root note, it doesn't get displayed.
+	* Bug fix chordrecognizer: remove overloaded __init__ method since
+	python does not support overloading *blush* (at least not the way I
+	expected it to support it)
+
+2005-dec-22  Stefaan Himpe  stefaan.himpe@gmail.com
+	* Minor speed-up: in ChordRecognizer: avoid two passes over all
+	permutations while looking for chords with minimal energy function
+	* Comments: update some obsolete comments in the .py files
+	
+2005-dec-19  Stefaan Himpe  stefaan.himpe@gmail.com
+	
+	* GPL-ification: add copyright notices, add gpl.txt, author.txt,
+	changelog.txt
+	
+2005-dec-18  Stefaan Himpe  stefaan.himpe@gmail.com
+
+	* Initial, early release
+
+
